@@ -1,6 +1,7 @@
-import { ADD_PRODUCT_TO_CART, REMOVE_PRODUCT_FROM_CART } from '../actions/shoppingCartActions';
+import { ADD_PRODUCT_TO_CART, REMOVE_PRODUCT_FROM_CART, GET_USER } from '../actions/shoppingCartActions';
 const initialState = {
-  cart: []
+  cart: [],
+  users: []
 };
 const shopReducer = (state = initialState, action) => {
   let updatedCart;
@@ -36,6 +37,8 @@ const shopReducer = (state = initialState, action) => {
         updatedCart[updatedItemIndex] = updatedItem;
       }
       return {...state, cart : updatedCart}
+    case GET_USER:
+      return {...state, users : action.payload}
     default:
       return state;
   }

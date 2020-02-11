@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { addProductToCart } from '../../store/actions/shoppingCartActions'
-import ProductItem from './ProductItem'
+import ProductItem from './ProductItem';
+import MyComponent from '../renderComponent/RenderComponent'
+
 import Grid from '@material-ui/core/Grid';
 
 class ProductList extends Component {
@@ -35,13 +37,14 @@ class ProductList extends Component {
     return (
       <Grid container spacing={24}>
         {productList}
+        <MyComponent />
       </Grid>
     );
   }
 };
 const mapStateToProps = (state) => {
   return {
-    // cart: state.shoppingCart
+    // users: state.shoppingCart.users
   };
 }
 const mapDispatchToProps = (dispatch) => {
